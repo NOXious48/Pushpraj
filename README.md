@@ -135,6 +135,8 @@ This is the script for according to the challenge which is capable of doing :
 -   Detailed logging
 -   Error handling and status reporting
 -   Non-disruptive operation (uses read-only mounts for backup)
+
+Now how to run script
 ```command
 # Make the script executable
 chmod +x docker-backup.sh
