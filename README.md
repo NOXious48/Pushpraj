@@ -150,7 +150,42 @@ i have already created a volume by name `test_volume` and `my_data_volume` and m
 
 `test` have a `test.txt` file at /home/app directory and `test2` have a `test.txt` file at /app directory.
 
-the content of both of test file
+this are the content of this test.txt files:
+### image here
 
 
-Now time for checking the script
+Now time for checking the script.
+
+```command
+_# Run backup_ 
+./docker-backup.sh backup 
+
+_# List backups_ 
+./docker-backup.sh list 
+```
+
+### image here
+```command
+_# Remove test container and volume_ 
+docker rm -f test_container
+docker volume rm test_volume 
+docker rm -f my_data_volume
+docker volume rm my_data_volume
+```
+### image here
+```command
+_# Restore volume_ 
+./docker-backup.sh restore test_volume
+./docker-backup.sh restore my_data_volume
+```
+for the prove look at the image below:
+ ### image here
+ 
+ Now time to check logfile of backup:
+ 
+ ```command
+ cat /var/log/docker-backup.log
+ ```
+ ### image here
+ 
+ the cronjob file will ensure that the `docker-backup.sh` file run at midnight daily 
